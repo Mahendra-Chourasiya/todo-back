@@ -53,7 +53,7 @@ public class MailService {
 
             // Correct path to the logo image (adjust based on the actual running directory)
             // FileSystemResource resource = new FileSystemResource(new File("frontend/src/assets/logo.png"));
-            // helper.addInline("logoImage", resource);  // 'logoImage' must match the 'cid' used in the HTML content
+            helper.addInline("logoImage", resource);  // 'logoImage' must match the 'cid' used in the HTML content
 
             mailSender.send(message);
             System.out.println("Email sent successfully");
