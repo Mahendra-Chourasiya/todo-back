@@ -1,9 +1,6 @@
 package com.mahendra.todoapp.services;
 
-// import java.io.File;
-
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -49,12 +46,13 @@ public class MailService {
 
             helper.setText(htmlContent, true);
 
-            ClassPathResource resource = new ClassPathResource("static/logo.png"); 
+            // Load the logo image from the classpath
+            ClassPathResource resource = new ClassPathResource("static/logo.png");
 
-            // Correct path to the logo image (adjust based on the actual running directory)
-            // FileSystemResource resource = new FileSystemResource(new File("frontend/src/assets/logo.png"));
+            // Attach the logo image to the email
             helper.addInline("logoImage", resource);  // 'logoImage' must match the 'cid' used in the HTML content
 
+            // Send the email
             mailSender.send(message);
             System.out.println("Email sent successfully");
 
