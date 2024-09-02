@@ -28,7 +28,6 @@ public class MailService {
             // HTML content with inline image reference
             String htmlContent = "<html><body style='font-family: Arial, sans-serif; color: #333;'>"
                 + "<div style='text-align: center; padding: 20px;'>"
-                + "<img src='cid:logoImage' style='width: 200px; height: auto;' alt='Taskify Logo'>"  // 'cid:logoImage' is used as the content ID for the inline image
                 + "</div>"
                 + "<div style='text-align: center; padding: 20px;'>"
                 + "<h1 style='color: #4A90E2;'>Welcome to Taskify, " + username + "!</h1>"
