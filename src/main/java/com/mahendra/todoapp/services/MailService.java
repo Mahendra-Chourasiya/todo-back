@@ -49,7 +49,7 @@ public class MailService {
 
             helper.setText(htmlContent, true);
 
-            ClassPathResource resource = new ClassPathResource("/logo.png"); 
+            ClassPathResource resource = new ClassPathResource("services/logo.png"); 
 
             // Correct path to the logo image (adjust based on the actual running directory)
             // FileSystemResource resource = new FileSystemResource(new File("frontend/src/assets/logo.png"));
