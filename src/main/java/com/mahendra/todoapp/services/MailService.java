@@ -1,6 +1,6 @@
 package com.mahendra.todoapp.services;
 
-import java.io.File;
+// import java.io.File;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
@@ -28,6 +28,7 @@ public class MailService {
             // HTML content with inline image reference
             String htmlContent = "<html><body style='font-family: Arial, sans-serif; color: #333;'>"
                 + "<div style='text-align: center; padding: 20px;'>"
+                + "<img src='cid:logoImage' style='width: 200px; height: auto;' alt='Taskify Logo'>"
                 + "</div>"
                 + "<div style='text-align: center; padding: 20px;'>"
                 + "<h1 style='color: #4A90E2;'>Welcome to Taskify, " + username + "!</h1>"
@@ -47,9 +48,11 @@ public class MailService {
 
             helper.setText(htmlContent, true);
 
+            ClassPathResource resource = new ClassPathResource("logo.png"); 
+
             // Correct path to the logo image (adjust based on the actual running directory)
-            FileSystemResource resource = new FileSystemResource(new File("frontend/src/assets/logo.png"));
-            helper.addInline("logoImage", resource);  // 'logoImage' must match the 'cid' used in the HTML content
+            // FileSystemResource resource = new FileSystemResource(new File("frontend/src/assets/logo.png"));
+            // helper.addInline("logoImage", resource);  // 'logoImage' must match the 'cid' used in the HTML content
 
             mailSender.send(message);
             System.out.println("Email sent successfully");
