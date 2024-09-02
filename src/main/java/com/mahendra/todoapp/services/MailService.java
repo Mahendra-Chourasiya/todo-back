@@ -121,6 +121,6 @@ public class MailService {
 //             System.err.println("Error sending email: " + e.getMessage());
 //         } catch (Exception e) {
 //             System.err.println("Error: " + e.getMessage());
-        }
-    }
-}
+        // }
+    // }
+// }
